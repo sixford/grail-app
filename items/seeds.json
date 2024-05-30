@@ -1,0 +1,132 @@
+[
+  {
+    "model": "items.item",
+    "pk": 1,
+    "fields": {
+      "brand": "Jordan",
+      "type": "Sneaker",
+      "colour": "Red/Black",
+      "year_of_release": 1985,
+      "size": "10",
+      "price": 200.00,
+      "description": "Classic Air Jordan 1 in the iconic Bred colorway."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 2,
+    "fields": {
+      "brand": "Adidas",
+      "type": "Sneaker",
+      "colour": "Grey/White",
+      "year_of_release": 2015,
+      "size": "9",
+      "price": 220.00,
+      "description": "Yeezy Boost 350, a popular lifestyle sneaker."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 3,
+    "fields": {
+      "brand": "Nike",
+      "type": "Sneaker",
+      "colour": "Silver",
+      "year_of_release": 1997,
+      "size": "11",
+      "price": 160.00,
+      "description": "Air Max 97, known for its reflective design and comfort."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 4,
+    "fields": {
+      "brand": "Reebok",
+      "type": "Sneaker",
+      "colour": "Red/Black",
+      "year_of_release": 1994,
+      "size": "10",
+      "price": 180.00,
+      "description": "Instapump Fury, a unique design with pump technology."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 5,
+    "fields": {
+      "brand": "Puma",
+      "type": "Sneaker",
+      "colour": "White/Blue",
+      "year_of_release": 1986,
+      "size": "9",
+      "price": 150.00,
+      "description": "RS-Computer Shoe, featuring advanced technology for its time."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 6,
+    "fields": {
+      "brand": "Converse",
+      "type": "Sneaker",
+      "colour": "Black/White",
+      "year_of_release": 1917,
+      "size": "8",
+      "price": 55.00,
+      "description": "Chuck Taylor All Star, an iconic basketball sneaker."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 7,
+    "fields": {
+      "brand": "New Balance",
+      "type": "Sneaker",
+      "colour": "Grey",
+      "year_of_release": 1982,
+      "size": "10",
+      "price": 175.00,
+      "description": "New Balance 990, renowned for its comfort and quality."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 8,
+    "fields": {
+      "brand": "ASICS",
+      "type": "Sneaker",
+      "colour": "White/Blue",
+      "year_of_release": 1993,
+      "size": "9",
+      "price": 120.00,
+      "description": "Gel-Lyte III, a popular running shoe with split tongue design."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 9,
+    "fields": {
+      "brand": "Vans",
+      "type": "Sneaker",
+      "colour": "Black/White",
+      "year_of_release": 1977,
+      "size": "11",
+      "price": 60.00,
+      "description": "Old Skool, a classic skateboarding shoe."
+    }
+  },
+  {
+    "model": "items.item",
+    "pk": 10,
+    "fields": {
+      "brand": "Under Armour",
+      "type": "Sneaker",
+      "colour": "Black/White",
+      "year_of_release": 2015,
+      "size": "10",
+      "price": 130.00,
+      "description": "Curry One, designed for performance on the basketball court."
+    }
+  }
+]
