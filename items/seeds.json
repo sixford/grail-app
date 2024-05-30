@@ -9,7 +9,8 @@
       "year_of_release": 1985,
       "size": "10",
       "price": 200.00,
-      "description": "Classic Air Jordan 1 in the iconic Bred colorway."
+      "description": "Classic Air Jordan 1 in the iconic Bred colorway.",
+      "owner": 1
     }
   },
   {
@@ -22,7 +23,8 @@
       "year_of_release": 2015,
       "size": "9",
       "price": 220.00,
-      "description": "Yeezy Boost 350, a popular lifestyle sneaker."
+      "description": "Yeezy Boost 350, a popular lifestyle sneaker.",
+      "owner": 2
     }
   },
   {
@@ -35,7 +37,8 @@
       "year_of_release": 1997,
       "size": "11",
       "price": 160.00,
-      "description": "Air Max 97, known for its reflective design and comfort."
+      "description": "Air Max 97, known for its reflective design and comfort.",
+      "owner": 3
     }
   },
   {
@@ -48,7 +51,8 @@
       "year_of_release": 1994,
       "size": "10",
       "price": 180.00,
-      "description": "Instapump Fury, a unique design with pump technology."
+      "description": "Instapump Fury, a unique design with pump technology.",
+      "owner": 4
     }
   },
   {
@@ -61,7 +65,8 @@
       "year_of_release": 1986,
       "size": "9",
       "price": 150.00,
-      "description": "RS-Computer Shoe, featuring advanced technology for its time."
+      "description": "RS-Computer Shoe, featuring advanced technology for its time.",
+      "owner": 5
     }
   },
   {
@@ -74,7 +79,8 @@
       "year_of_release": 1917,
       "size": "8",
       "price": 55.00,
-      "description": "Chuck Taylor All Star, an iconic basketball sneaker."
+      "description": "Chuck Taylor All Star, an iconic basketball sneaker.",
+      "owner": 1
     }
   },
   {
@@ -87,7 +93,8 @@
       "year_of_release": 1982,
       "size": "10",
       "price": 175.00,
-      "description": "New Balance 990, renowned for its comfort and quality."
+      "description": "New Balance 990, renowned for its comfort and quality.",
+      "owner": 2
     }
   },
   {
@@ -100,7 +107,8 @@
       "year_of_release": 1993,
       "size": "9",
       "price": 120.00,
-      "description": "Gel-Lyte III, a popular running shoe with split tongue design."
+      "description": "Gel-Lyte III, a popular running shoe with split tongue design.",
+      "owner": 3
     }
   },
   {
@@ -113,7 +121,8 @@
       "year_of_release": 1977,
       "size": "11",
       "price": 60.00,
-      "description": "Old Skool, a classic skateboarding shoe."
+      "description": "Old Skool, a classic skateboarding shoe.",
+      "owner": 4
     }
   },
   {
@@ -126,7 +135,8 @@
       "year_of_release": 2015,
       "size": "10",
       "price": 130.00,
-      "description": "Curry One, designed for performance on the basketball court."
+      "description": "Curry One, designed for performance on the basketball court.",
+      "owner": 5
     }
   }
 ]

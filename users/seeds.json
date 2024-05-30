@@ -1,0 +1,57 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "username": "user1",
+      "email": "user1@example.com",
+      "first_name": "John",
+      "last_name": "Doe",
+      "password": "pbkdf2_sha256$260000$samplehash1$..."
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "username": "user2",
+      "email": "user2@example.com",
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "password": "pbkdf2_sha256$260000$samplehash2$..."
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "username": "user3",
+      "email": "user3@example.com",
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "password": "pbkdf2_sha256$260000$samplehash3$..."
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "username": "user4",
+      "email": "user4@example.com",
+      "first_name": "Bob",
+      "last_name": "Brown",
+      "password": "pbkdf2_sha256$260000$samplehash4$..."
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "username": "user5",
+      "email": "user5@example.com",
+      "first_name": "Charlie",
+      "last_name": "Davis",
+      "password": "pbkdf2_sha256$260000$samplehash5$..."
+    }
+  }
+]
