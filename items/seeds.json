@@ -1,142 +1,342 @@
 [
   {
-    "model": "items.item",
-    "pk": 1,
-    "fields": {
-      "brand": "Jordan",
-      "type": "Sneaker",
-      "colour": "Red/Black",
-      "year_of_release": 1985,
-      "size": "10",
-      "price": 200.00,
-      "description": "Classic Air Jordan 1 in the iconic Bred colorway.",
-      "owner": 1
-    }
+      "model": "items.item",
+      "pk": 1,
+      "fields": {
+          "brand": "Jordan",
+          "type": ["Basketball"],
+          "colour": "Red/Black",
+          "year_of_release": 1985,
+          "size": "10",
+          "owner": 1,
+          "price": 200.00,
+          "description": "Classic Air Jordan 1 in the iconic Bred colorway.",
+          "image_1": "https://example.com/images/air_jordan_1_bred_1.jpg",
+          "image_2": "https://example.com/images/air_jordan_1_bred_2.jpg",
+          "image_3": "https://example.com/images/air_jordan_1_bred_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 2,
-    "fields": {
-      "brand": "Adidas",
-      "type": "Sneaker",
-      "colour": "Grey/White",
-      "year_of_release": 2015,
-      "size": "9",
-      "price": 220.00,
-      "description": "Yeezy Boost 350, a popular lifestyle sneaker.",
-      "owner": 2
-    }
+      "model": "items.item",
+      "pk": 2,
+      "fields": {
+          "brand": "Adidas",
+          "type": ["Lifestyle"],
+          "colour": "Grey/White",
+          "year_of_release": 2015,
+          "size": "9",
+          "owner": 2,
+          "price": 220.00,
+          "description": "Yeezy Boost 350, a popular lifestyle sneaker.",
+          "image_1": "https://example.com/images/yeezy_boost_350_1.jpg",
+          "image_2": "https://example.com/images/yeezy_boost_350_2.jpg",
+          "image_3": "https://example.com/images/yeezy_boost_350_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 3,
-    "fields": {
-      "brand": "Nike",
-      "type": "Sneaker",
-      "colour": "Silver",
-      "year_of_release": 1997,
-      "size": "11",
-      "price": 160.00,
-      "description": "Air Max 97, known for its reflective design and comfort.",
-      "owner": 3
-    }
+      "model": "items.item",
+      "pk": 3,
+      "fields": {
+          "brand": "Nike",
+          "type": ["Lifestyle", "Running"],
+          "colour": "Silver",
+          "year_of_release": 1997,
+          "size": "11",
+          "owner": 3,
+          "price": 160.00,
+          "description": "Air Max 97, known for its reflective design and comfort.",
+          "image_1": "https://example.com/images/air_max_97_1.jpg",
+          "image_2": "https://example.com/images/air_max_97_2.jpg",
+          "image_3": "https://example.com/images/air_max_97_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 4,
-    "fields": {
-      "brand": "Reebok",
-      "type": "Sneaker",
-      "colour": "Red/Black",
-      "year_of_release": 1994,
-      "size": "10",
-      "price": 180.00,
-      "description": "Instapump Fury, a unique design with pump technology.",
-      "owner": 4
-    }
+      "model": "items.item",
+      "pk": 4,
+      "fields": {
+          "brand": "Reebok",
+          "type": ["Basketball"],
+          "colour": "Red/Black",
+          "year_of_release": 1994,
+          "size": "10",
+          "owner": 4,
+          "price": 180.00,
+          "description": "Instapump Fury, a unique design with pump technology.",
+          "image_1": "https://example.com/images/instapump_fury_1.jpg",
+          "image_2": "https://example.com/images/instapump_fury_2.jpg",
+          "image_3": "https://example.com/images/instapump_fury_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 5,
-    "fields": {
-      "brand": "Puma",
-      "type": "Sneaker",
-      "colour": "White/Blue",
-      "year_of_release": 1986,
-      "size": "9",
-      "price": 150.00,
-      "description": "RS-Computer Shoe, featuring advanced technology for its time.",
-      "owner": 5
-    }
+      "model": "items.item",
+      "pk": 5,
+      "fields": {
+          "brand": "Puma",
+          "type": ["Technology"],
+          "colour": "White/Blue",
+          "year_of_release": 1986,
+          "size": "9",
+          "owner": 5,
+          "price": 150.00,
+          "description": "RS-Computer Shoe, featuring advanced technology for its time.",
+          "image_1": "https://example.com/images/rs_computer_shoe_1.jpg",
+          "image_2": "https://example.com/images/rs_computer_shoe_2.jpg",
+          "image_3": "https://example.com/images/rs_computer_shoe_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 6,
-    "fields": {
-      "brand": "Converse",
-      "type": "Sneaker",
-      "colour": "Black/White",
-      "year_of_release": 1917,
-      "size": "8",
-      "price": 55.00,
-      "description": "Chuck Taylor All Star, an iconic basketball sneaker.",
-      "owner": 1
-    }
+      "model": "items.item",
+      "pk": 6,
+      "fields": {
+          "brand": "Converse",
+          "type": ["Basketball"],
+          "colour": "Black/White",
+          "year_of_release": 1917,
+          "size": "8",
+          "owner": 1,
+          "price": 55.00,
+          "description": "Chuck Taylor All Star, an iconic basketball sneaker.",
+          "image_1": "https://example.com/images/chuck_taylor_all_star_1.jpg",
+          "image_2": "https://example.com/images/chuck_taylor_all_star_2.jpg",
+          "image_3": "https://example.com/images/chuck_taylor_all_star_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 7,
-    "fields": {
-      "brand": "New Balance",
-      "type": "Sneaker",
-      "colour": "Grey",
-      "year_of_release": 1982,
-      "size": "10",
-      "price": 175.00,
-      "description": "New Balance 990, renowned for its comfort and quality.",
-      "owner": 2
-    }
+      "model": "items.item",
+      "pk": 7,
+      "fields": {
+          "brand": "New Balance",
+          "type": ["Running"],
+          "colour": "Grey",
+          "year_of_release": 1982,
+          "size": "10",
+          "owner": 2,
+          "price": 175.00,
+          "description": "New Balance 990, renowned for its comfort and quality.",
+          "image_1": "https://example.com/images/new_balance_990_1.jpg",
+          "image_2": "https://example.com/images/new_balance_990_2.jpg",
+          "image_3": "https://example.com/images/new_balance_990_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 8,
-    "fields": {
-      "brand": "ASICS",
-      "type": "Sneaker",
-      "colour": "White/Blue",
-      "year_of_release": 1993,
-      "size": "9",
-      "price": 120.00,
-      "description": "Gel-Lyte III, a popular running shoe with split tongue design.",
-      "owner": 3
-    }
+      "model": "items.item",
+      "pk": 8,
+      "fields": {
+          "brand": "ASICS",
+          "type": ["Running"],
+          "colour": "White/Blue",
+          "year_of_release": 1993,
+          "size": "9",
+          "owner": 3,
+          "price": 120.00,
+          "description": "Gel-Lyte III, a popular running shoe with split tongue design.",
+          "image_1": "https://example.com/images/gel_lyte_iii_1.jpg",
+          "image_2": "https://example.com/images/gel_lyte_iii_2.jpg",
+          "image_3": "https://example.com/images/gel_lyte_iii_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 9,
-    "fields": {
-      "brand": "Vans",
-      "type": "Sneaker",
-      "colour": "Black/White",
-      "year_of_release": 1977,
-      "size": "11",
-      "price": 60.00,
-      "description": "Old Skool, a classic skateboarding shoe.",
-      "owner": 4
-    }
+      "model": "items.item",
+      "pk": 9,
+      "fields": {
+          "brand": "Vans",
+          "type": ["Skateboarding"],
+          "colour": "Black/White",
+          "year_of_release": 1977,
+          "size": "11",
+          "owner": 4,
+          "price": 60.00,
+          "description": "Old Skool, a classic skateboarding shoe.",
+          "image_1": "https://example.com/images/old_skool_1.jpg",
+          "image_2": "https://example.com/images/old_skool_2.jpg",
+          "image_3": "https://example.com/images/old_skool_3.jpg"
+      }
   },
   {
-    "model": "items.item",
-    "pk": 10,
-    "fields": {
-      "brand": "Under Armour",
-      "type": "Sneaker",
-      "colour": "Black/White",
-      "year_of_release": 2015,
-      "size": "10",
-      "price": 130.00,
-      "description": "Curry One, designed for performance on the basketball court.",
-      "owner": 5
-    }
+      "model": "items.item",
+      "pk": 10,
+      "fields": {
+          "brand": "Under Armour",
+          "type": ["Basketball"],
+          "colour": "Black/White",
+          "year_of_release": 2015,
+          "size": "10",
+          "owner": 5,
+          "price": 130.00,
+          "description": "Curry One, designed for performance on the basketball court.",
+          "image_1": "https://example.com/images/curry_one_1.jpg",
+          "image_2": "https://example.com/images/curry_one_2.jpg",
+          "image_3": "https://example.com/images/curry_one_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 11,
+      "fields": {
+          "brand": "Nike",
+          "type": ["Lifestyle", "Basketball"],
+          "colour": "Black",
+          "year_of_release": 2019,
+          "size": "9",
+          "owner": 1,
+          "price": 180.00,
+          "description": "LeBron 17, combining style and performance.",
+          "image_1": "https://example.com/images/lebron_17_1.jpg",
+          "image_2": "https://example.com/images/lebron_17_2.jpg",
+          "image_3": "https://example.com/images/lebron_17_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 12,
+      "fields": {
+          "brand": "Adidas",
+          "type": ["Running"],
+          "colour": "White/Black",
+          "year_of_release": 2020,
+          "size": "10",
+          "owner": 2,
+          "price": 140.00,
+          "description": "UltraBoost, known for its cushioning and comfort.",
+          "image_1": "https://example.com/images/ultraboost_1.jpg",
+          "image_2": "https://example.com/images/ultraboost_2.jpg",
+          "image_3": "https://example.com/images/ultraboost_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 13,
+      "fields": {
+          "brand": "Puma",
+          "type": ["Lifestyle"],
+          "colour": "Yellow/Black",
+          "year_of_release": 2021,
+          "size": "8",
+          "owner": 3,
+          "price": 110.00,
+          "description": "Puma RS-X, a bold and stylish sneaker.",
+          "image_1": "https://example.com/images/puma_rsx_1.jpg",
+          "image_2": "https://example.com/images/puma_rsx_2.jpg",
+          "image_3": "https://example.com/images/puma_rsx_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 14,
+      "fields": {
+          "brand": "New Balance",
+          "type": ["Lifestyle"],
+          "colour": "Grey/White",
+          "year_of_release": 2022,
+          "size": "10",
+          "owner": 4,
+          "price": 160.00,
+          "description": "New Balance 327, combining vintage style with modern comfort.",
+          "image_1": "https://example.com/images/new_balance_327_1.jpg",
+          "image_2": "https://example.com/images/new_balance_327_2.jpg",
+          "image_3": "https://example.com/images/new_balance_327_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 15,
+      "fields": {
+          "brand": "Reebok",
+          "type": ["Fitness", "Lifestyle"],
+          "colour": "Black/White",
+          "year_of_release": 2018,
+          "size": "9",
+          "owner": 5,
+          "price": 90.00,
+          "description": "Reebok Nano, a versatile shoe for training and everyday wear.",
+          "image_1": "https://example.com/images/reebok_nano_1.jpg",
+          "image_2": "https://example.com/images/reebok_nano_2.jpg",
+          "image_3": "https://example.com/images/reebok_nano_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 16,
+      "fields": {
+          "brand": "ASICS",
+          "type": ["Running"],
+          "colour": "Blue/White",
+          "year_of_release": 2021,
+          "size": "8",
+          "owner": 1,
+          "price": 130.00,
+          "description": "ASICS Gel-Kayano, a reliable shoe for long-distance running.",
+          "image_1": "https://example.com/images/gel_kayano_1.jpg",
+          "image_2": "https://example.com/images/gel_kayano_2.jpg",
+          "image_3": "https://example.com/images/gel_kayano_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 17,
+      "fields": {
+          "brand": "Vans",
+          "type": ["Skateboarding"],
+          "colour": "Red/White",
+          "year_of_release": 2015,
+          "size": "9",
+          "owner": 2,
+          "price": 70.00,
+          "description": "Vans Authentic, a timeless skate shoe.",
+          "image_1": "https://example.com/images/vans_authentic_1.jpg",
+          "image_2": "https://example.com/images/vans_authentic_2.jpg",
+          "image_3": "https://example.com/images/vans_authentic_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 18,
+      "fields": {
+          "brand": "Nike",
+          "type": ["Lifestyle"],
+          "colour": "White",
+          "year_of_release": 2018,
+          "size": "10",
+          "owner": 3,
+          "price": 120.00,
+          "description": "Nike Air Force 1, a classic and versatile sneaker.",
+          "image_1": "https://example.com/images/air_force_1_1.jpg",
+          "image_2": "https://example.com/images/air_force_1_2.jpg",
+          "image_3": "https://example.com/images/air_force_1_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 19,
+      "fields": {
+          "brand": "Adidas",
+          "type": ["Lifestyle", "Basketball"],
+          "colour": "Black/Red",
+          "year_of_release": 2016,
+          "size": "11",
+          "owner": 4,
+          "price": 200.00,
+          "description": "Adidas Harden Vol. 1, designed for performance and style.",
+          "image_1": "https://example.com/images/harden_vol_1_1.jpg",
+          "image_2": "https://example.com/images/harden_vol_1_2.jpg",
+          "image_3": "https://example.com/images/harden_vol_1_3.jpg"
+      }
+  },
+  {
+      "model": "items.item",
+      "pk": 20,
+      "fields": {
+          "brand": "Puma",
+          "type": ["Lifestyle"],
+          "colour": "Green/White",
+          "year_of_release": 2020,
+          "size": "9",
+          "owner": 5,
+          "price": 100.00,
+          "description": "Puma Suede Classic, a retro style sneaker.",
+          "image_1": "https://example.com/images/puma_suede_classic_1.jpg",
+          "image_2": "https://example.com/images/puma_suede_classic_2.jpg",
+          "image_3": "https://example.com/images/puma_suede_classic_3.jpg"
+      }
   }
 ]

@@ -100,7 +100,7 @@ class ItemDetailView(APIView):
 
 
     def put(self, request, pk):
-        item = self.get_shoe(pk)
+        item = self.get_item(pk)
         serialized_item = ItemSerializer(instance=item, data=request.data, partial=True)
         if serialized_item.is_valid():
             serialized_item.save()
