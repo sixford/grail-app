@@ -11,12 +11,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.js'
 import './styles/main.scss'
 
 // Page components
-import LoginPage from './components/pages/LoginPage.jsx'
-import RegisterPage from './components/pages/RegisterPage.jsx'
+import Auth from './components/pages/Auth.jsx'
 import HomeFeed from './components/pages/HomeFeed.jsx'
 import CartPage from './components/pages/CartPage.jsx'
 import SingleItem from './components/pages/SingleItem.jsx'
-import ProfilePage from './components/pages/ProfilePage.jsx'
+// import ProfilePage from './components/pages/ProfilePage.jsx'
 import SearchPage from './components/pages/SearchPage.jsx'
 
 const router = createBrowserRouter([
@@ -25,12 +24,8 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: 'login',
-        element: <LoginPage />
-      },
-      {
-        path: 'register',
-        element: <RegisterPage />
+        path: 'auth',
+        element: <Auth />
       },
       {
         path: 'homefeed',
@@ -44,10 +39,10 @@ const router = createBrowserRouter([
         path: 'items/:itemId',
         element: <SingleItem />
       },
-      {
-        path: 'profile/:userId',
-        element: <ProfilePage />
-      },
+      // {
+      //   path: 'profile/:userId',
+      //   element: <ProfilePage />
+      // },
       {
         path: 'search/:query',
         element: <SearchPage />
