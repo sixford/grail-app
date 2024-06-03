@@ -55,10 +55,13 @@ class RemoveFromCartView(APIView):
 
     def delete(self, request, pk):
         item = get_object_or_404(Item, pk=pk)
+        print(f"Item: {item}") 
         cart = get_object_or_404(Cart, user=request.user)
+        print(f"Cart: {cart}")  
         cart_item = get_object_or_404(CartItem, cart=cart, item=item)
-
+        print(f"CartItem: {cart_item}")  
         cart_item.delete()
+        return Response(status=status.HTTP_200_OK)
 
-        return Response({"message": "Item removed from the cart"}, status=status.HTTP_200_OK)
+
 
