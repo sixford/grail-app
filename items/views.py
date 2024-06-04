@@ -45,10 +45,10 @@ class AddToCartView(APIView):
 
         # Check if the item is already in the cart
         if CartItem.objects.filter(cart=cart, item=item).exists():
-            return Response({"message": "Item is already in the cart"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "Item is already in cart"}, status=status.HTTP_400_BAD_REQUEST)
         
         cart_item = CartItem.objects.create(cart=cart, item=item)
-        return Response({"message": "Item added to the cart"}, status=status.HTTP_201_CREATED)
+        return Response({"message": "Item added to cart"}, status=status.HTTP_201_CREATED)
 
 class RemoveFromCartView(APIView):
     permission_classes = [permissions.IsAuthenticated]

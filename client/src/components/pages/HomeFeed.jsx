@@ -1,9 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { getToken } from "../../lib/auth" // Ensure this function retrieves the stored JWT token
+import { getToken } from "../../lib/auth" 
 import { Col, Row, Card, Container } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
-import LoadingSpinner from "../subcomponents/LoadingSpinner" // Ensure you have a spinner component or create one
+import LoadingSpinner from "../subcomponents/LoadingSpinner"
+
+
 
 export default function HomeFeed() {
     // Auth headers
@@ -19,28 +21,28 @@ export default function HomeFeed() {
         if (nextItem) navigate(`/items/${nextItem}`)
     }, [nextItem])
 
-    // Call homefeed endpoint for item data
     useEffect(() => {
         async function getItemData() {
             try {
-                const response = await axios.get("/api/items/", args);
-                setItemData(response.data);
-                console.log(response.data);
+                const response = await axios.get("/api/items/", args)
+                setItemData(response.data)
+                console.log(response.data)
             } catch (error) {
-                console.error(error);
-                setError(error);
+                console.error(error)
+                setError(error)
             }
         }
         getItemData()
     }, [])
 
     function hoverItem(e) {
-        setTitleShow(e.target.id);
+        setTitleShow(e.target.id)
     }
 
     function unhoverItem() {
         setTitleShow(false)
     }
+    
 
     return (
         <div className="homefeed flex-grow-1">

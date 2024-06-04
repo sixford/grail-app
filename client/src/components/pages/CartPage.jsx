@@ -13,20 +13,20 @@ const CartPage = () => {
         const token = getToken()
         const response = await axios.get('/api/items/cart/', {
           headers: { Authorization: `Bearer ${token}` }
-        });
+        })
         setCartItems(response.data.items || [])
       } catch (err) {
         setError('There was an error fetching the cart items')
-        console.error(err);
+        console.error(err)
       }
-    };
+    }
 
-    fetchCartItems();
-  }, []);
+    fetchCartItems()
+  }, [])
 
   const handleRemoveItem = async (itemId) => {
     try {
-      const token = getToken();
+      const token = getToken()
       await axios.delete(`/api/items/cart/remove/${itemId}/`, {
         headers: { Authorization: `Bearer ${token}` }
       })

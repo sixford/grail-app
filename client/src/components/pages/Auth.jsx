@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import axios from 'axios';
-import { setToken } from '../../lib/auth';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react'
+import axios from 'axios'
+import { setToken } from '../../lib/auth'
+import { useNavigate } from 'react-router-dom'
 
 export default function Auth() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     username: '',
@@ -12,7 +12,7 @@ export default function Auth() {
     password: '',
     passwordConfirmation: '',
     profile_pic: 'https://via.placeholder.com/300',
-  });
+  })
 
   const [error, setError] = useState('');
 
@@ -20,7 +20,7 @@ export default function Auth() {
 
   const switchStatus = () => {
     setIsSignUp((previousState) => !previousState);
-  };
+  }
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -100,7 +100,7 @@ export default function Auth() {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
 
