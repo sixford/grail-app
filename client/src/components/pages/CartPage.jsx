@@ -1,25 +1,28 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
 import { getToken } from '../../lib/auth'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap'
+
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([])
   const [error, setError] = useState('')
 
-  useEffect(() => {
-    const fetchCartItems = async () => {
-      try {
-        const token = getToken()
-        const response = await axios.get('/api/items/cart/', {
-          headers: { Authorization: `Bearer ${token}` }
-        })
-        setCartItems(response.data.items || [])
-      } catch (err) {
-        setError('There was an error fetching the cart items')
-        console.error(err)
-      }
+  const fetchCartItems = useCallback(async () => {
+    try {
+      const token = getToken()
+      const response = await axios.get('/api/items/cart/', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      setCartItems(response.data.items || [])
+    } catch (err) {
+      setError('There was an error fetching the cart items')
+      console.error(err)
     }
+  }, [])
+
+  useEffect(() => {
+
 
     fetchCartItems()
   }, [])
@@ -30,7 +33,7 @@ const CartPage = () => {
       await axios.delete(`/api/items/cart/remove/${itemId}/`, {
         headers: { Authorization: `Bearer ${token}` }
       })
-      setCartItems(cartItems.filter(item => item.id !== itemId))
+      fetchCartItems()
     } catch (err) {
       setError('There was an error removing the item from the cart')
       console.error(err)
@@ -58,7 +61,7 @@ const CartPage = () => {
                   <Card.Text>
                     Price: ${cartItem.item.price}
                   </Card.Text>
-                  <Button variant="danger" onClick={() => handleRemoveItem(cartItem.id)}>
+                  <Button variant="danger" onClick={() => handleRemoveItem(cartItem.item.id)}>
                     Remove
                   </Button>
                 </Card.Body>
