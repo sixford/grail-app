@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { getToken } from '../../lib/auth'; // Ensure this function retrieves the stored JWT token
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { getToken } from '../../lib/auth'
+import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const [error, setError] = useState('');
+  const [cartItems, setCartItems] = useState([])
+  const [error, setError] = useState('')
 
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const token = getToken();
+        const token = getToken()
         const response = await axios.get('/api/items/cart/', {
           headers: { Authorization: `Bearer ${token}` }
         });
-        setCartItems(response.data.items || []);
+        setCartItems(response.data.items || [])
       } catch (err) {
-        setError('There was an error fetching the cart items!');
+        setError('There was an error fetching the cart items')
         console.error(err);
       }
     };
@@ -29,8 +29,8 @@ const CartPage = () => {
       const token = getToken();
       await axios.delete(`/api/items/cart/remove/${itemId}/`, {
         headers: { Authorization: `Bearer ${token}` }
-      });
-      setCartItems(cartItems.filter(item => item.id !== itemId));
+      })
+      setCartItems(cartItems.filter(item => item.id !== itemId))
     } catch (err) {
       setError('There was an error removing the item from the cart')
       console.error(err)
@@ -70,7 +70,7 @@ const CartPage = () => {
         )}
       </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default CartPage;
+export default CartPage
