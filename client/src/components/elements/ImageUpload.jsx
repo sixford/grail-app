@@ -6,8 +6,8 @@ import PropTypes from 'prop-types'
 export default function ImageUpload({ formData, setFormData }) {
     const [error, setError] = useState('')
 
-    const uploadPreset = import.meta.env.VITE_UPLOAD_PRESET;
-    const uploadUrl = import.meta.env.VITE_CLOUDINARY_URL;
+    const uploadPreset = import.meta.env.VITE_UPLOAD_PRESET
+    const uploadUrl = import.meta.env.VITE_CLOUDINARY_URL
 
     async function handleUpload(e) {
         const file = e.target.files[0]

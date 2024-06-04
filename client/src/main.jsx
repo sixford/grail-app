@@ -15,7 +15,6 @@ import Auth from './components/pages/Auth.jsx'
 import HomeFeed from './components/pages/HomeFeed.jsx'
 import CartPage from './components/pages/CartPage.jsx'
 import SingleItem from './components/pages/SingleItem.jsx'
-// import ProfilePage from './components/pages/ProfilePage.jsx'
 import SearchPage from './components/pages/SearchPage.jsx'
 
 const router = createBrowserRouter([
