@@ -16,6 +16,7 @@ import HomeFeed from './components/pages/HomeFeed.jsx'
 import CartPage from './components/pages/CartPage.jsx'
 import SingleItem from './components/pages/SingleItem.jsx'
 import SearchPage from './components/pages/SearchPage.jsx'
+import AddItem from './components/pages/AddItem.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         element: <HomeFeed />
       },
       {
+        path: 'add-item',
+        element: <AddItem/>
+      },
+      {
         path: 'cart',
         element: <CartPage />
       },
@@ -38,17 +43,13 @@ const router = createBrowserRouter([
         path: 'items/:itemId',
         element: <SingleItem />
       },
-      // {
-      //   path: 'profile/:userId',
-      //   element: <ProfilePage />
-      // },
       {
         path: 'search/:query',
         element: <SearchPage />
       }
     ]
   }
-]);
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

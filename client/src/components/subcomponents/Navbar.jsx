@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
-import { getToken } from '../../lib/auth'
+import { removeToken, getToken } from '../../lib/auth'
 
 const Navbar = () => {
   const token = getToken()
+
+  const handleLogout = () => {
+    removeToken()
+    window.location.href = '/'
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,6 +33,9 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link className="nav-link" to="/cart">Cart</Link>
                 </li>
+                <li className="nav-item">
+                  <button className="nav-link btn btn-link" onClick={handleLogout}>Logout</button>
+                </li>
               </>
             )}
           </ul>
@@ -38,7 +46,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
 export default Navbar
