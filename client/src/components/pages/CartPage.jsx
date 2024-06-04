@@ -32,7 +32,7 @@ const CartPage = () => {
       });
       setCartItems(cartItems.filter(item => item.id !== itemId));
     } catch (err) {
-      setError('There was an error removing the item from the cart!')
+      setError('There was an error removing the item from the cart')
       console.error(err)
     }
   }
