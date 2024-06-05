@@ -62,16 +62,16 @@ export default function Auth() {
         </div>
         <h2>{isSignup ? 'Sign Up' : 'Sign In'}</h2>
         <form className="d-flex flex-column" onSubmit={handleSubmit}>
-          {isSignup && (
             <div className="form-floating mb-3">
               <input type="text" className="form-control" name="username" id="username" placeholder="Username" onChange={handleChange} value={formData.username} />
               <label htmlFor="username">Username</label>
             </div>
-          )}
+          {isSignup && (
           <div className="form-floating mb-3">
             <input type="email" className="form-control" name="email" id="email" placeholder="Email" onChange={handleChange} value={formData.email} />
             <label htmlFor="email">Email</label>
           </div>
+          )}
           <div className="form-floating mb-3">
             <input type="password" className="form-control" name="password" id="password" placeholder="Password" onChange={handleChange} value={formData.password} />
             <label htmlFor="password">Password</label>

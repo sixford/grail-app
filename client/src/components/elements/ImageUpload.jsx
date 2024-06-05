@@ -20,7 +20,7 @@ export default function ImageUpload({ formData, setFormData }) {
             console.log(data.secure_url)
             setFormData({ ...formData, image: data.secure_url })
         } catch (error) {
-            console.error(error)
+            console.log(error)
             setError(error.message)
         }
     }

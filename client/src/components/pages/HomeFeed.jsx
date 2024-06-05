@@ -1,82 +1,82 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { getToken } from "../../lib/auth";
-import { Col, Row, Card, Container, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import LoadingSpinner from "../subcomponents/LoadingSpinner";
-import FormModal from "../subcomponents/FormModal";
+import axios from "axios"
+import { useEffect, useState } from "react"
+import { getToken } from "../../lib/auth"
+import { Col, Row, Card, Container, Button } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
+import LoadingSpinner from "../subcomponents/LoadingSpinner"
+import FormModal from "../subcomponents/FormModal"
 
 export default function HomeFeed() {
-  const args = { headers: { authorization: `Bearer ${getToken()}` } };
-  const [itemData, setItemData] = useState([]);
-  const [error, setError] = useState();
-  const [titleShow, setTitleShow] = useState();
-  const [nextItem, setNextItem] = useState();
-  const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({});
-  const [editingItemId, setEditingItemId] = useState(null);
-  const navigate = useNavigate();
-  const token = getToken();
+  const args = { headers: { authorization: `Bearer ${getToken()}` } }
+  const [itemData, setItemData] = useState([])
+  const [error, setError] = useState()
+  const [titleShow, setTitleShow] = useState()
+  const [nextItem, setNextItem] = useState()
+  const [showModal, setShowModal] = useState(false)
+  const [formData, setFormData] = useState({})
+  const [editingItemId, setEditingItemId] = useState(null)
+  const navigate = useNavigate()
+  const token = getToken()
 
   useEffect(() => {
-    if (nextItem) navigate(`/items/${nextItem}`);
-  }, [nextItem, navigate]);
+    if (nextItem) navigate(`/items/${nextItem}`)
+  }, [nextItem, navigate])
 
   useEffect(() => {
     async function getItemData() {
       try {
-        const response = await axios.get("/api/items/", args);
-        setItemData(response.data);
+        const response = await axios.get("/api/items/", args)
+        setItemData(response.data)
       } catch (error) {
-        setError(error);
+        setError(error)
       }
     }
-    getItemData();
-  }, []);
+    getItemData()
+  }, [])
 
   const fetchItemData = async () => {
     try {
-      const response = await axios.get("/api/items/", args);
-      setItemData(response.data);
+      const response = await axios.get("/api/items/", args)
+      setItemData(response.data)
     } catch (error) {
-      setError(error);
+      setError(error)
     }
-  };
+  }
 
   const handleAddItem = () => {
-    setEditingItemId(null);
-    setFormData({});
-    setShowModal(true);
-  };
+    setEditingItemId(null)
+    setFormData({})
+    setShowModal(true)
+  }
 
   const handleEditItem = (item) => {
-    setEditingItemId(item.id);
-    setFormData(item);
-    setShowModal(true);
-  };
+    setEditingItemId(item.id)
+    setFormData(item)
+    setShowModal(true)
+  }
 
   const handleModalClose = () => {
-    setShowModal(false);
-  };
+    setShowModal(false)
+  }
 
   const handleModalSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       if (editingItemId) {
-        await axios.put(`/api/items/${editingItemId}/`, formData, args);
+        await axios.put(`/api/items/${editingItemId}/`, formData, args)
       } else {
-        await axios.post('/api/items/', formData, args);
+        await axios.post('/api/items/', formData, args)
       }
-      setShowModal(false);
-      fetchItemData();  // Fetch the latest items after add/update
+      setShowModal(false)
+      fetchItemData() // Fetch the latest items after add/update
     } catch (error) {
-      setError(error);
+      setError(error)
     }
-  };
+  }
 
   const isOwner = (item) => {
-    return item.owner === token.user_id;
-  };
+    return item.owner === token.user_id
+  }
 
   return (
     <div className="homefeed flex-grow-1">
@@ -89,7 +89,7 @@ export default function HomeFeed() {
             </Button>
             <Row className="g-4 pb-4 d-flex">
               {itemData.map((item) => {
-                const { owner, image_1, brand, type, id } = item;
+                const { owner, image_1, brand, type, id } = item
                 return (
                   <Col key={id} xs={12} sm={6} md={4} lg={4} xl={4}>
                     <Card className="home-cards">
@@ -130,7 +130,7 @@ export default function HomeFeed() {
                       </Card.Body>
                     </Card>
                   </Col>
-                );
+                )
               })}
             </Row>
           </>
@@ -151,7 +151,7 @@ export default function HomeFeed() {
         setError={setError}
       />
     </div>
-  );
+  )
 }
 
 

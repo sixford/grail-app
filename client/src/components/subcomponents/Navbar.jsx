@@ -1,13 +1,21 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { removeToken, getToken } from '../../lib/auth'
+import { useEffect } from 'react'
+
 
 const Navbar = () => {
   const token = getToken()
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+  }, [location])
 
   const handleLogout = () => {
     removeToken()
-    window.location.href = '/'
-  };
+    navigate("/")
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
