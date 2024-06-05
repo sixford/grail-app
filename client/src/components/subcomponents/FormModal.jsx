@@ -1,11 +1,20 @@
+// Bootstrap Components
 import { Button, Form, Modal } from 'react-bootstrap'
+// Custom Components
 import ImageUpload from '../elements/ImageUpload.jsx'
 import PropTypes from 'prop-types'
 
-export default function FormModal({ show, handleClose, handleSubmit, title, formData, setFormData, error, setError }) {
+export default function FormModal({ show, handleClose, handleSubmit, title, formData, setFormData, error, setError, isCreate = true }) {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
+        console.log(e.target.name, e.target.value)
         setError('')
+    }
+
+    function handleMultiple(e){
+      const asArray = e.target.value.replace(' ', '').split(',')
+    
+      setFormData({...formData, types: asArray})
     }
 
     return (
@@ -94,8 +103,19 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
                             required
                         />
                     </Form.Group>
-                    <ImageUpload formData={formData} setFormData={setFormData} />
-                    {error && <p className='text-danger text-center my-2'>{error}. Complete all fields.</p>}
+                    <Form.Group className="mb-3" controlId="image_1">
+                        <Form.Label>Image 1</Form.Label>
+                        <ImageUpload formData={formData} setFormData={setFormData} fieldName="image_1" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="image_2">
+                        <Form.Label>Image 2</Form.Label>
+                        <ImageUpload formData={formData} setFormData={setFormData} fieldName="image_2" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="image_3">
+                        <Form.Label>Image 3</Form.Label>
+                        <ImageUpload formData={formData} setFormData={setFormData} fieldName="image_3" />
+                    </Form.Group>
+                    {error && <p className='text-danger text-center my-2'>{error}</p>}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
@@ -111,29 +131,30 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
 }
 
 FormModal.propTypes = {
-  show: PropTypes.bool.isRequired,
-  handleClose: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  formData: PropTypes.shape({
-      brand: PropTypes.string,
-      type: PropTypes.string,
-      colour: PropTypes.string,
-      year_of_release: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number
-      ]),
-      size: PropTypes.string,
-      price: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.number
-      ]),
-      description: PropTypes.string,
-      image_1: PropTypes.string,
-      image_2: PropTypes.string,
-      image_3: PropTypes.string
-  }).isRequired,
-  setFormData: PropTypes.func.isRequired,
-  error: PropTypes.string,
-  setError: PropTypes.func.isRequired
+    show: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired,
+    formData: PropTypes.shape({
+        brand: PropTypes.string,
+        type: PropTypes.array,
+        colour: PropTypes.string,
+        year_of_release: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ]),
+        size: PropTypes.string,
+        price: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ]),
+        description: PropTypes.string,
+        image_1: PropTypes.string,
+        image_2: PropTypes.string,
+        image_3: PropTypes.string
+    }).isRequired,
+    setFormData: PropTypes.func.isRequired,
+    error: PropTypes.string,
+    setError: PropTypes.func.isRequired,
+    isCreate: PropTypes.bool
 }

@@ -10,10 +10,10 @@
           "size": "10",
           "owner": 1,
           "price": 200.00,
-          "description": "Classic Air Jordan 1 in the iconic Bred colorway.",
-          "image_1": "https://example.com/images/air_jordan_1_bred_1.jpg",
-          "image_2": "https://example.com/images/air_jordan_1_bred_2.jpg",
-          "image_3": "https://example.com/images/air_jordan_1_bred_3.jpg"
+          "description": "Classic Air Jordan 1 in the iconic Bred colorway. Mint condition",
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717602366/Project-4/bred1-1_jvjcbj.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717602385/Project-4/bred1-2_z7r3ez.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717602573/Project-4/bred1-6_vere8n.jpg"
       }
   },
   {
@@ -28,9 +28,9 @@
           "owner": 2,
           "price": 220.00,
           "description": "Yeezy Boost 350, a popular lifestyle sneaker.",
-          "image_1": "https://example.com/images/yeezy_boost_350_1.jpg",
-          "image_2": "https://example.com/images/yeezy_boost_350_2.jpg",
-          "image_3": "https://example.com/images/yeezy_boost_350_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717602989/Project-4/yzy-1_l65lyv.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717603166/Project-4/yzy-3_ksgzeg.webp",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717603237/Project-4/yzy-3_toh5v8.jpg"
       }
   },
   {
@@ -44,10 +44,10 @@
           "size": "11",
           "owner": 3,
           "price": 160.00,
-          "description": "Air Max 97, known for its reflective design and comfort.",
-          "image_1": "https://example.com/images/air_max_97_1.jpg",
-          "image_2": "https://example.com/images/air_max_97_2.jpg",
-          "image_3": "https://example.com/images/air_max_97_3.jpg"
+          "description": "Skepta Air Max 97, known for its reflective design and comfort.",
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717603712/Project-4/skepta-1_app0c4.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717603911/Project-4/skepta-2_ka09yx.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717603971/Project-4/skepta-3_kkdajm.jpg"
       }
   },
   {
@@ -62,26 +62,26 @@
           "owner": 4,
           "price": 180.00,
           "description": "Instapump Fury, a unique design with pump technology.",
-          "image_1": "https://example.com/images/instapump_fury_1.jpg",
-          "image_2": "https://example.com/images/instapump_fury_2.jpg",
-          "image_3": "https://example.com/images/instapump_fury_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604261/Project-4/reebok-1_laowhj.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604302/Project-4/reebok-2_a2pwqe.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604334/Project-4/reebok-3_nthtg3.webp"
       }
   },
   {
       "model": "items.item",
       "pk": 5,
       "fields": {
-          "brand": "Puma",
-          "type": ["Technology"],
-          "colour": "White/Blue",
+          "brand": "Converse",
+          "type": ["Basketball"],
+          "colour": "Black/White",
           "year_of_release": 1986,
           "size": "9",
           "owner": 5,
           "price": 150.00,
-          "description": "RS-Computer Shoe, featuring advanced technology for its time.",
-          "image_1": "https://example.com/images/rs_computer_shoe_1.jpg",
-          "image_2": "https://example.com/images/rs_computer_shoe_2.jpg",
-          "image_3": "https://example.com/images/rs_computer_shoe_3.jpg"
+          "description": "Comme des Garcon x Converse. Great condition.",
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604485/Project-4/cdg-1_jiv7uh.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604516/Project-4/cdg-2_zjsswl.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604560/Project-4/cdg-3_rah0di.jpg"
       }
   },
   {
@@ -96,9 +96,9 @@
           "owner": 1,
           "price": 55.00,
           "description": "Chuck Taylor All Star, an iconic basketball sneaker.",
-          "image_1": "https://example.com/images/chuck_taylor_all_star_1.jpg",
-          "image_2": "https://example.com/images/chuck_taylor_all_star_2.jpg",
-          "image_3": "https://example.com/images/chuck_taylor_all_star_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604738/Project-4/conv-2_rsxucd.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604796/Project-4/conv-3_fuafpl.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717604864/Project-4/conv-4_g9ybx8.webp"
       }
   },
   {
@@ -113,9 +113,9 @@
           "owner": 2,
           "price": 175.00,
           "description": "New Balance 990, renowned for its comfort and quality.",
-          "image_1": "https://example.com/images/new_balance_990_1.jpg",
-          "image_2": "https://example.com/images/new_balance_990_2.jpg",
-          "image_3": "https://example.com/images/new_balance_990_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605167/Project-4/newb-1_egrdtt.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605248/Project-4/newb-2_lqutb0.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605297/Project-4/newb-3_azptpb.jpg"
       }
   },
   {
@@ -130,9 +130,9 @@
           "owner": 3,
           "price": 120.00,
           "description": "Gel-Lyte III, a popular running shoe with split tongue design.",
-          "image_1": "https://example.com/images/gel_lyte_iii_1.jpg",
-          "image_2": "https://example.com/images/gel_lyte_iii_2.jpg",
-          "image_3": "https://example.com/images/gel_lyte_iii_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605493/Project-4/asics-1_dhmoxe.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605580/Project-4/asics-2_mt6e1d.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605613/Project-4/asics-3_vpwubs.webp"
       }
   },
   {
@@ -147,9 +147,9 @@
           "owner": 4,
           "price": 60.00,
           "description": "Old Skool, a classic skateboarding shoe.",
-          "image_1": "https://example.com/images/old_skool_1.jpg",
-          "image_2": "https://example.com/images/old_skool_2.jpg",
-          "image_3": "https://example.com/images/old_skool_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605735/Project-4/vans-1_hw7rpf.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605773/Project-4/vans-2_kmyekn.webp",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717605804/Project-4/vans-3_c5tyw4.jpg"
       }
   },
   {
@@ -158,15 +158,15 @@
       "fields": {
           "brand": "Under Armour",
           "type": ["Basketball"],
-          "colour": "Black/White",
+          "colour": "Blue/Yellow",
           "year_of_release": 2015,
           "size": "10",
           "owner": 5,
           "price": 130.00,
           "description": "Curry One, designed for performance on the basketball court.",
-          "image_1": "https://example.com/images/curry_one_1.jpg",
-          "image_2": "https://example.com/images/curry_one_2.jpg",
-          "image_3": "https://example.com/images/curry_one_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717606214/Project-4/curry-1_aa3qtu.avif",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717606232/Project-4/curry1-2_t0fzvo.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717606245/Project-4/curry1-3_nkl97f.webp"
       }
   },
   {
@@ -175,15 +175,15 @@
       "fields": {
           "brand": "Nike",
           "type": ["Lifestyle", "Basketball"],
-          "colour": "Black",
+          "colour": "White",
           "year_of_release": 2019,
           "size": "9",
           "owner": 1,
           "price": 180.00,
-          "description": "LeBron 17, combining style and performance.",
-          "image_1": "https://example.com/images/lebron_17_1.jpg",
-          "image_2": "https://example.com/images/lebron_17_2.jpg",
-          "image_3": "https://example.com/images/lebron_17_3.jpg"
+          "description": "AF1 - Nike x Off-White collab, combining style and performance.",
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717606456/Project-4/af1-1_rje03s.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717606763/Project-4/af1-2_v8q3es.webp",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717606837/Project-4/af1-3_apiaae.jpg"
       }
   },
   {
@@ -198,9 +198,9 @@
           "owner": 2,
           "price": 140.00,
           "description": "UltraBoost, known for its cushioning and comfort.",
-          "image_1": "https://example.com/images/ultraboost_1.jpg",
-          "image_2": "https://example.com/images/ultraboost_2.jpg",
-          "image_3": "https://example.com/images/ultraboost_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607509/Project-4/boost-1_ru71ox.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607538/Project-4/boost-2_zeuuz5.webp",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607568/Project-4/boost-3_xn73kc.jpg"
       }
   },
   {
@@ -209,15 +209,15 @@
       "fields": {
           "brand": "Puma",
           "type": ["Lifestyle"],
-          "colour": "Yellow/Black",
+          "colour": "Multi",
           "year_of_release": 2021,
           "size": "8",
           "owner": 3,
           "price": 110.00,
           "description": "Puma RS-X, a bold and stylish sneaker.",
-          "image_1": "https://example.com/images/puma_rsx_1.jpg",
-          "image_2": "https://example.com/images/puma_rsx_2.jpg",
-          "image_3": "https://example.com/images/puma_rsx_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607682/Project-4/pumag-1_llg1zm.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607720/Project-4/pumag-2_zxbq9i.webp",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607748/Project-4/pumag-3_yz3y2c.jpg"
       }
   },
   {
@@ -232,43 +232,43 @@
           "owner": 4,
           "price": 160.00,
           "description": "New Balance 327, combining vintage style with modern comfort.",
-          "image_1": "https://example.com/images/new_balance_327_1.jpg",
-          "image_2": "https://example.com/images/new_balance_327_2.jpg",
-          "image_3": "https://example.com/images/new_balance_327_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607866/Project-4/nb327-1_ev0vj5.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607907/Project-4/nb327-2_pmv0tr.webp",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717607958/Project-4/nb327-3_sukz6b.webp"
       }
   },
   {
       "model": "items.item",
       "pk": 15,
       "fields": {
-          "brand": "Reebok",
+          "brand": "Jordan",
           "type": ["Fitness", "Lifestyle"],
-          "colour": "Black/White",
+          "colour": "White",
           "year_of_release": 2018,
           "size": "9",
           "owner": 5,
-          "price": 90.00,
-          "description": "Reebok Nano, a versatile shoe for training and everyday wear.",
-          "image_1": "https://example.com/images/reebok_nano_1.jpg",
-          "image_2": "https://example.com/images/reebok_nano_2.jpg",
-          "image_3": "https://example.com/images/reebok_nano_3.jpg"
+          "price": 300.00,
+          "description": "Jordan x OVO, a versatile set for every occasion.",
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608146/Project-4/ovo-1_wqu4vz.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608190/Project-4/ovo-2_zq9ol4.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608201/Project-4/ovo-3_t61ur3.webp"
       }
   },
   {
       "model": "items.item",
       "pk": 16,
       "fields": {
-          "brand": "ASICS",
+          "brand": "Nike",
           "type": ["Running"],
-          "colour": "Blue/White",
+          "colour": "Multi",
           "year_of_release": 2021,
           "size": "8",
           "owner": 1,
-          "price": 130.00,
-          "description": "ASICS Gel-Kayano, a reliable shoe for long-distance running.",
-          "image_1": "https://example.com/images/gel_kayano_1.jpg",
-          "image_2": "https://example.com/images/gel_kayano_2.jpg",
-          "image_3": "https://example.com/images/gel_kayano_3.jpg"
+          "price": 300.00,
+          "description": "Sean Wotherspoon x Nike. Classic.",
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608346/Project-4/swoth-1_xppduu.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608372/Project-4/swoth-2_rhuwpx.webp",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608404/Project-4/swoth-3_sc3dnk.webp"
       }
   },
   {
@@ -283,9 +283,9 @@
           "owner": 2,
           "price": 70.00,
           "description": "Vans Authentic, a timeless skate shoe.",
-          "image_1": "https://example.com/images/vans_authentic_1.jpg",
-          "image_2": "https://example.com/images/vans_authentic_2.jpg",
-          "image_3": "https://example.com/images/vans_authentic_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608534/Project-4/vansr-1_hn1pp0.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608546/Project-4/vansr-2_suxk17.webp",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608555/Project-4/vansr-3_f14qto.webp"
       }
   },
   {
@@ -299,10 +299,10 @@
           "size": "10",
           "owner": 3,
           "price": 120.00,
-          "description": "Nike Air Force 1, a classic and versatile sneaker.",
-          "image_1": "https://example.com/images/air_force_1_1.jpg",
-          "image_2": "https://example.com/images/air_force_1_2.jpg",
-          "image_3": "https://example.com/images/air_force_1_3.jpg"
+          "description": "Nike Air Max 98, a classic and versatile sneaker.",
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608767/Project-4/am98-1_hffvxk.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608778/Project-4/am98-2_thk65f.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608787/Project-4/am98-3_lllyej.webp"
       }
   },
   {
@@ -317,9 +317,9 @@
           "owner": 4,
           "price": 200.00,
           "description": "Adidas Harden Vol. 1, designed for performance and style.",
-          "image_1": "https://example.com/images/harden_vol_1_1.jpg",
-          "image_2": "https://example.com/images/harden_vol_1_2.jpg",
-          "image_3": "https://example.com/images/harden_vol_1_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608920/Project-4/harden-1_hua3jg.jpg",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608925/Project-4/harden-2_ypoqpz.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717608932/Project-4/harden-3_uhid3m.webp"
       }
   },
   {
@@ -334,9 +334,9 @@
           "owner": 5,
           "price": 100.00,
           "description": "Puma Suede Classic, a retro style sneaker.",
-          "image_1": "https://example.com/images/puma_suede_classic_1.jpg",
-          "image_2": "https://example.com/images/puma_suede_classic_2.jpg",
-          "image_3": "https://example.com/images/puma_suede_classic_3.jpg"
+          "image_1": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717609096/Project-4/pumasu-1_nyi1hi.webp",
+          "image_2": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717609102/Project-4/pumasu-2_g0utbu.jpg",
+          "image_3": "https://res.cloudinary.com/ddxr0v722/image/upload/v1717609109/Project-4/pumasu-3_krhiiq.webp"
       }
   }
 ]

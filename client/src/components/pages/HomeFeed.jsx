@@ -68,9 +68,9 @@ export default function HomeFeed() {
         await axios.post('/api/items/', formData, args)
       }
       setShowModal(false)
-      fetchItemData() // Fetch the latest items after add/update
+      fetchItemData()
     } catch (error) {
-      setError(error)
+      console.log(error)
     }
   }
 

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-export default function ImageUpload({ formData, setFormData }) {
+export default function ImageUpload({ formData, setFormData, fieldName }) {
     const [error, setError] = useState('')
 
     const uploadPreset = import.meta.env.VITE_UPLOAD_PRESET
@@ -18,7 +18,7 @@ export default function ImageUpload({ formData, setFormData }) {
         try {
             const { data } = await axios.post(uploadUrl, form)
             console.log(data.secure_url)
-            setFormData({ ...formData, image: data.secure_url })
+            setFormData({ ...formData, [fieldName]: data.secure_url })
         } catch (error) {
             console.log(error)
             setError(error.message)
@@ -31,14 +31,14 @@ export default function ImageUpload({ formData, setFormData }) {
                 <Form.Label>Image</Form.Label>
                 <Form.Control
                     type="file"
-                    name="image"
+                    name={fieldName}
                     accept="image/*"
                     onChange={handleUpload}
                     required
                 />
             </Form.Group>
             {error && <p className="text-danger">{error}</p>}
-            {formData.image && <img src={formData.image} alt="Uploaded preview" style={{ width: '100%', marginTop: '10px' }} />}
+            {formData[fieldName] && <img src={formData[fieldName]} alt="Uploaded preview" style={{ width: '100%', marginTop: '10px' }} />}
         </>
     )
 }

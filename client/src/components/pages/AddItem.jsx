@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import FormModal from '../subcomponents/FormModal.jsx';
-import { getToken } from '../../lib/auth.js';
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import FormModal from '../subcomponents/FormModal.jsx'
+import { getToken } from '../../lib/auth.js'
 
 const AddItem = ({ editingItemId, show, handleClose }) => {
   const [formData, setFormData] = useState({
@@ -15,39 +15,45 @@ const AddItem = ({ editingItemId, show, handleClose }) => {
     image_1: '',
     image_2: '',
     image_3: ''
-  });
-  const [error, setError] = useState('');
+  })
+  const [error, setError] = useState('')
 
   useEffect(() => {
     if (editingItemId) {
-      fetchItem(editingItemId);
+      fetchItem(editingItemId)
     }
-  }, [editingItemId]);
+  }, [editingItemId])
 
   const fetchItem = async (itemId) => {
     try {
-      const response = await axios.get(`/api/items/${itemId}`);
+      const response = await axios.get(`/api/items/${itemId}`, {
+        headers: { Authorization: `Bearer ${getToken()}` }
+      })
       setFormData(response.data);
     } catch (error) {
-      console.error('Error fetching item:', error);
+      console.error('Error fetching item:', error)
+      setError('Error fetching item.')
     }
-  };
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const config = { headers: { Authorization: `Bearer ${getToken()}` } };
       if (editingItemId) {
-        await axios.put(`/api/items/${editingItemId}/`, formData, config);
+        await axios.put(`/api/items/${editingItemId}/`, formData, {
+          headers: { Authorization: `Bearer ${getToken()}` }
+        })
       } else {
-        await axios.post('/api/items/', formData, config);
+        await axios.post('/api/items/', formData, {
+          headers: { Authorization: `Bearer ${getToken()}` }
+        })
       }
-      handleClose(); // Close the modal after successful submission
+      handleClose()
     } catch (error) {
-      setError('Error submitting item');
-      console.error('Error submitting item:', error);
+      console.error('Error submitting item:', error)
+      setError('Error submitting item.')
     }
-  };
+  }
 
   return (
     <FormModal
@@ -59,8 +65,9 @@ const AddItem = ({ editingItemId, show, handleClose }) => {
       setFormData={setFormData}
       error={error}
       setError={setError}
+      isCreate={!editingItemId}
     />
-  );
-};
+  )
+}
 
-export default AddItem;
+export default AddItem
