@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Root from './Root.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // Root component (assumed to be the main layout)
-import Root from './Root.jsx'
 
 // Style components
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -12,6 +12,7 @@ import './styles/main.scss'
 
 // Page components
 import Auth from './components/pages/Auth.jsx'
+import Home from './components/pages/Home.jsx'
 import HomeFeed from './components/pages/HomeFeed.jsx'
 import CartPage from './components/pages/CartPage.jsx'
 import SingleItem from './components/pages/SingleItem.jsx'
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <Root />,
     children: [
+      {
+        path: '',
+        element: <Home />
+      },
       {
         path: 'auth',
         element: <Auth />
