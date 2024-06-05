@@ -1,9 +1,22 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import FormModal from '../subcomponents/FormModal.jsx';
+import { getToken } from '../../lib/auth.js';
 
-const AddItem = ({ editingItemId }) => {
-  const [formData, setFormData] = useState({});
+const AddItem = ({ editingItemId, show, handleClose }) => {
+  const [formData, setFormData] = useState({
+    brand: '',
+    type: '',
+    colour: '',
+    year_of_release: '',
+    size: '',
+    price: '',
+    description: '',
+    image_1: '',
+    image_2: '',
+    image_3: ''
+  });
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (editingItemId) {
@@ -23,35 +36,31 @@ const AddItem = ({ editingItemId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const config = { headers: { Authorization: `Bearer ${getToken()}` } };
       if (editingItemId) {
-        await axios.put(`/api/items/${editingItemId}/`, formData);
+        await axios.put(`/api/items/${editingItemId}/`, formData, config);
       } else {
-        await axios.post('/api/items/', formData);
+        await axios.post('/api/items/', formData, config);
       }
-      // Optionally, redirect the user to a different page after successful submission
+      handleClose(); // Close the modal after successful submission
     } catch (error) {
+      setError('Error submitting item');
       console.error('Error submitting item:', error);
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
     <FormModal
-      show={true} // Set to true to always show the modal
-      handleClose={() => {}} // Placeholder function for closing the modal
+      show={show}
+      handleClose={handleClose}
       handleSubmit={handleSubmit}
       title={editingItemId ? 'Edit Item' : 'Add New Item'}
       formData={formData}
       setFormData={setFormData}
-      error={''} // Placeholder for error message
-      setError={() => {}} // Placeholder function for setting error
-      isCreate={!editingItemId} // Determine if it's a create or edit operation
-      handleChange={handleChange} // Pass handleChange to the FormModal component
+      error={error}
+      setError={setError}
     />
   );
 };
 
-export default AddItem
+export default AddItem;

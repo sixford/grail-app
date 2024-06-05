@@ -1,10 +1,8 @@
-// Bootstrap Components
 import { Button, Form, Modal } from 'react-bootstrap'
-// Custom Components
 import ImageUpload from '../elements/ImageUpload.jsx'
 import PropTypes from 'prop-types'
 
-export default function FormModal({ show, handleClose, handleSubmit, title, formData, setFormData, error, setError, isCreate = true }) {
+export default function FormModal({ show, handleClose, handleSubmit, title, formData, setFormData, error, setError }) {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
         setError('')
@@ -131,10 +129,11 @@ FormModal.propTypes = {
           PropTypes.number
       ]),
       description: PropTypes.string,
-      image: PropTypes.string
+      image_1: PropTypes.string,
+      image_2: PropTypes.string,
+      image_3: PropTypes.string
   }).isRequired,
   setFormData: PropTypes.func.isRequired,
   error: PropTypes.string,
-  setError: PropTypes.func.isRequired,
-  isCreate: PropTypes.bool
+  setError: PropTypes.func.isRequired
 }

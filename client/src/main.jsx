@@ -32,10 +32,6 @@ const router = createBrowserRouter([
         element: <HomeFeed />
       },
       {
-        path: 'add-item',
-        element: <AddItem/>
-      },
-      {
         path: 'cart',
         element: <CartPage />
       },
@@ -46,7 +42,11 @@ const router = createBrowserRouter([
       {
         path: 'search/:query',
         element: <SearchPage />
-      }
+      },
+      {
+        path: 'add-item',
+        element: <AddItem/>
+      },
     ]
   }
 ])

@@ -26,6 +26,7 @@ class ItemDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def perform_update(self, serializer):
         serializer.save(owner=self.request.user)
+        
 
 # Cart View
 class CartView(generics.RetrieveAPIView):

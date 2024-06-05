@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap'
-import { getToken } from '../../lib/auth'; // Ensure this function retrieves the stored JWT token
+import { getToken } from '../../lib/auth' // Ensure this function retrieves the stored JWT token
 
 const SingleItem = () => {
   const { itemId } = useParams()
