@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import FormModal from '../subcomponents/FormModal.jsx'
-import { getToken } from '../../lib/auth.js'
 
-const AddItem = ({ editingItemId, show, handleClose }) => {
+const AddItem = ({ editingItemId }) => {
   const [formData, setFormData] = useState({
     brand: '',
-    type: '',
+    type: [],
     colour: '',
     year_of_release: '',
     size: '',
@@ -20,54 +19,47 @@ const AddItem = ({ editingItemId, show, handleClose }) => {
 
   useEffect(() => {
     if (editingItemId) {
-      fetchItem(editingItemId)
+      fetchItem(editingItemId);
     }
   }, [editingItemId])
 
   const fetchItem = async (itemId) => {
     try {
-      const response = await axios.get(`/api/items/${itemId}`, {
-        headers: { Authorization: `Bearer ${getToken()}` }
-      })
-      setFormData(response.data);
+      const response = await axios.get(`/api/items/${itemId}`)
+      setFormData(response.data)
     } catch (error) {
       console.error('Error fetching item:', error)
-      setError('Error fetching item.')
     }
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       if (editingItemId) {
-        await axios.put(`/api/items/${editingItemId}/`, formData, {
-          headers: { Authorization: `Bearer ${getToken()}` }
-        })
+        await axios.put(`/api/items/${editingItemId}/`, formData)
       } else {
-        await axios.post('/api/items/', formData, {
-          headers: { Authorization: `Bearer ${getToken()}` }
-        })
+        await axios.post('/api/items/', formData)
       }
-      handleClose()
     } catch (error) {
       console.error('Error submitting item:', error)
-      setError('Error submitting item.')
+      setError('There was an error submitting the form')
     }
   }
 
   return (
     <FormModal
-      show={show}
-      handleClose={handleClose}
+      show={true}
+      handleClose={() => {}}
       handleSubmit={handleSubmit}
       title={editingItemId ? 'Edit Item' : 'Add New Item'}
       formData={formData}
       setFormData={setFormData}
-      error={error}
-      setError={setError}
-      isCreate={!editingItemId}
+      error={error} 
+      setError={setError} 
+      isCreate={!editingItemId} 
     />
   )
 }
 
 export default AddItem
+

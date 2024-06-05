@@ -7,14 +7,12 @@ import PropTypes from 'prop-types'
 export default function FormModal({ show, handleClose, handleSubmit, title, formData, setFormData, error, setError, isCreate = true }) {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
-        console.log(e.target.name, e.target.value)
         setError('')
     }
 
-    function handleMultiple(e){
-      const asArray = e.target.value.replace(' ', '').split(',')
-    
-      setFormData({...formData, types: asArray})
+    const handleMultiple = (e) => {
+        const asArray = e.target.value.replace(/\s+/g, '').split(',')
+        setFormData({ ...formData, type: asArray })
     }
 
     return (
@@ -31,7 +29,7 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
                             placeholder="Brand"
                             name='brand'
                             onChange={handleChange}
-                            value={formData.brand}
+                            value={formData.brand || ''}
                             required
                         />
                     </Form.Group>
@@ -41,8 +39,8 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
                             type="text"
                             placeholder="Type (comma separated)"
                             name='type'
-                            onChange={handleChange}
-                            value={formData.type}
+                            onChange={handleMultiple}
+                            value={(formData.type && formData.type.join(', ')) || ''}
                             required
                         />
                     </Form.Group>
@@ -53,7 +51,7 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
                             placeholder="Colour"
                             name='colour'
                             onChange={handleChange}
-                            value={formData.colour}
+                            value={formData.colour || ''}
                             required
                         />
                     </Form.Group>
@@ -64,7 +62,7 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
                             placeholder="Year of Release"
                             name='year_of_release'
                             onChange={handleChange}
-                            value={formData.year_of_release}
+                            value={formData.year_of_release || ''}
                             required
                         />
                     </Form.Group>
@@ -75,7 +73,7 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
                             placeholder="Size"
                             name='size'
                             onChange={handleChange}
-                            value={formData.size}
+                            value={formData.size || ''}
                             required
                         />
                     </Form.Group>
@@ -86,7 +84,7 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
                             placeholder="Price"
                             name='price'
                             onChange={handleChange}
-                            value={formData.price}
+                            value={formData.price || ''}
                             step="0.01"
                             required
                         />
@@ -98,7 +96,7 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
                             rows={2}
                             name='description'
                             onChange={handleChange}
-                            value={formData.description}
+                            value={formData.description || ''}
                             placeholder="Description"
                             required
                         />
