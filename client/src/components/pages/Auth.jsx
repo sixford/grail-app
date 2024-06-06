@@ -58,7 +58,6 @@ export default function Auth() {
     <div className="auth-container">
       <div className="form-page flex-grow-1 d-flex flex-column justify-content-center align-items-center">
         <div>
-          <img src="https://www.svgrepo.com/show/506724/lock.svg" alt="lock" width="100px" />
         </div>
         <h2>{isSignup ? 'Sign Up' : 'Sign In'}</h2>
         <form className="d-flex flex-column" onSubmit={handleSubmit}>

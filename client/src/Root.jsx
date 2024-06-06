@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 
 import Navbar from './components/subcomponents/Navbar'
-import Footer from './components/pages/Footer'
+import Footer from './components/pages/Footer.jsx'
 
 export default function Root({ children }) {
   return (
