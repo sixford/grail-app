@@ -83,7 +83,7 @@ export default function HomeFeed() {
       <Container className="home-feed-container">
         {itemData.length ? (
           <>
-            <h1 className="text-center text-light my-4">Home Feed</h1>
+            <h1 className="text-center text-dark my-4">Marketplace</h1>
             <Button variant="primary" onClick={handleAddItem}>
               Add Item
             </Button>
