@@ -70,18 +70,39 @@
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  
+
   h1 {
     margin-bottom: 1rem;
     animation: fadeIn 2s ease-in;
   }
 
   p {
-    margin-bottom: 0;
+    margin-bottom: 2rem;
     animation: fadeIn 3s ease-in;
+  }
+
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .carousel-content {
+    display: flex;
+    animation: scroll 20s linear infinite;
+
+    .carousel-item {
+      flex: 0 0 auto;
+      padding: 0 20px;
+      h2 {
+        font-size: 2rem;
+      }
+    }
   }
 }
 
@@ -91,5 +112,14 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
