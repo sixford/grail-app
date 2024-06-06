@@ -1,6 +1,5 @@
 $background: linear-gradient(to right, #ff7e5f, #feb47b);
 
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
@@ -133,7 +132,6 @@ body {
   }
 }
 
-
 .home-feed-container {
   max-width: 1200px;
   width: 100%;
@@ -152,15 +150,13 @@ body {
     height: 100%;
     width: 100%;
     max-height: 85%;
+  }
 
-}
-
-.home-feed-card-img {
+  .home-feed-card-img {
     height: 100%;
     width: 100%;
     max-height: 85%;
-
-}
+  }
 
   .card-body {
     display: flex;
@@ -207,4 +203,33 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.homefeed {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: black;
+
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto 20px;
+
+    .carousel-content {
+      display: flex;
+      animation: scroll 20s linear infinite;
+
+      .carousel-item {
+        flex: 0 0 auto;
+        padding: 0 20px;
+
+        h2 {
+          font-size: 2rem;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+
 

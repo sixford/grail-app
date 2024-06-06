@@ -83,6 +83,14 @@ export default function HomeFeed() {
       <Container className="home-feed-container">
         {itemData.length ? (
           <>
+            <div className="carousel-container">
+              <div className="carousel-content">
+                <div className="carousel-item"><h2>Jordan</h2></div>
+                <div className="carousel-item"><h2>Adidas</h2></div>
+                <div className="carousel-item"><h2>Nike</h2></div>
+                <div className="carousel-item"><h2>Converse</h2></div>
+              </div>
+            </div>
             <h1 className="text-center text-dark my-4">Marketplace</h1>
             <div className="d-flex justify-content-center my-4">
             <Button variant="primary" onClick={handleAddItem}>
