@@ -1,5 +1,12 @@
 $background: linear-gradient(to right, #ff7e5f, #feb47b);
 
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .addItemContainer {
   max-width: 600px;
   margin: 0 auto;
@@ -162,4 +169,42 @@ $background: linear-gradient(to right, #ff7e5f, #feb47b);
   }
 }
 
+.cart-page {
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.cart-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  .cart-card-img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+}
+
+.auth-container {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-page {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 

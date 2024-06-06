@@ -84,9 +84,11 @@ export default function HomeFeed() {
         {itemData.length ? (
           <>
             <h1 className="text-center text-dark my-4">Marketplace</h1>
+            <div className="d-flex justify-content-center my-4">
             <Button variant="primary" onClick={handleAddItem}>
               Add Item
             </Button>
+            </div>
             <Row className="g-4 pb-4 d-flex">
               {itemData.map((item) => {
                 const { owner, image_1, brand, type, id } = item

@@ -41,14 +41,14 @@ const CartPage = () => {
   }
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4 cart-page">
       <h1>Your Cart</h1>
       {error && <p className="text-danger">{error}</p>}
       <Row>
         {cartItems.length > 0 ? (
           cartItems.map(cartItem => (
             <Col key={cartItem.id} xs={12} md={6} lg={4} className="mb-4">
-              <Card>
+              <Card className="cart-card">
                 <Card.Img variant="top" src={cartItem.item.image_1} alt={cartItem.item.brand} />
                 <Card.Body>
                   <Card.Title>{cartItem.item.brand}</Card.Title>
