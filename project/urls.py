@@ -16,9 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib import admin
+from django.urls import path, include, re_path # <-- added this new import re_path
+from .views import index # <-- also new
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/items/', include('items.urls')),
     path('api/auth/', include('users.urls')),
+    re_path(r'^.*$', index) # <-- have this come last using re path.
 ]
+
