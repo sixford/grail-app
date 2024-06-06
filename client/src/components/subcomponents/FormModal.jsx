@@ -15,6 +15,7 @@ export default function FormModal({ show, handleClose, handleSubmit, title, form
         setFormData({ ...formData, type: asArray })
     }
 
+
     return (
         <Modal show={show} onHide={handleClose} backdrop="static" centered>
             <Modal.Header closeButton>

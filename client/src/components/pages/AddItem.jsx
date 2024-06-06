@@ -19,7 +19,7 @@ const AddItem = ({ editingItemId }) => {
 
   useEffect(() => {
     if (editingItemId) {
-      fetchItem(editingItemId);
+      fetchItem(editingItemId)
     }
   }, [editingItemId])
 

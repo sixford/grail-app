@@ -16,41 +16,41 @@ export default function Auth() {
 
   const [error, setError] = useState('');
 
-  const [isSignup, setIsSignUp] = useState(true);
+  const [isSignup, setIsSignUp] = useState(true)
 
   const switchStatus = () => {
-    setIsSignUp((previousState) => !previousState);
+    setIsSignUp((previousState) => !previousState)
   }
 
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError('');
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setError('')
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     try {
       if (isSignup) {
-        const { username, email, password, passwordConfirmation, profile_pic } = formData;
+        const { username, email, password, passwordConfirmation, profile_pic } = formData
         await axios.post('/api/auth/register/', {
           username,
           email,
           password,
           password_confirmation: passwordConfirmation,
           profile_pic
-        });
-        switchStatus();
+        })
+        switchStatus()
       } else {
         const { data } = await axios.post('/api/auth/login/', {
           username: formData.username,
           password: formData.password,
-        });
+        })
 
-        setToken(data.access); // Assuming your setToken function handles storing the access token
-        navigate('/homefeed');
+        setToken(data.access)
+        navigate('/homefeed')
       }
     } catch (error) {
-      setError(error.response.data);
+      setError(error.response.data)
     }
   }
 
