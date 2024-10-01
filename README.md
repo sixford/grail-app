@@ -1,6 +1,6 @@
 ## Grail
 
-##Overview
+## Overview
 Grail is a full-stack web application that replicates a marketplace platform for sneaker reselling, inspired by sites like Depop. Users can register, browse listings, add their own sneakers for sale, and manage their cart with ease.
 
 This project was created as the final capstone for a full-stack software engineering bootcamp at General Assembly.
