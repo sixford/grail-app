@@ -1,4 +1,4 @@
-## Grail
+# Grail
 
 ## Overview
 Grail is a full-stack web application that replicates a marketplace platform for sneaker reselling, inspired by sites like Depop. Users can register, browse listings, add their own sneakers for sale, and manage their cart with ease.
