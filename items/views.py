@@ -17,6 +17,26 @@ class ItemIndexView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        brand = self.request.query_params.get('brand')
+        type_param = self.request.query_params.get('type')
+        colour = self.request.query_params.get('colour')
+        size = self.request.query_params.get('size')
+
+        if brand:
+            queryset = queryset.filter(brand__icontains=brand)
+        if type_param:
+            queryset = queryset.filter(type__icontains=type_param)
+        if colour:
+            queryset = queryset.filter(colour__icontains=colour)
+        if size:
+            queryset = queryset.filter(size=size)  # use __icontains if it's a string
+
+        return queryset
+
+
 # Detail View
 class ItemDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Item.objects.all()

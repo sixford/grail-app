@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         element: <SingleItem />
       },
       {
-        path: 'search/:query',
+        path: 'search',
         element: <SearchPage />
       },
       {

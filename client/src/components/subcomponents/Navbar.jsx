@@ -1,20 +1,25 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { removeToken, getToken } from '../../lib/auth'
-import { useEffect } from 'react'
-
+import { useEffect, useState } from 'react'
 
 const Navbar = () => {
   const token = getToken()
   const location = useLocation()
   const navigate = useNavigate()
 
-  useEffect(() => {
+  const [query, setQuery] = useState('')
 
-  }, [location])
+  useEffect(() => {}, [location])
 
   const handleLogout = () => {
     removeToken()
     navigate("/")
+  }
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    if (!query.trim()) return
+    navigate(`/search?q=${encodeURIComponent(query.trim())}`)
   }
 
   return (
@@ -35,9 +40,6 @@ const Navbar = () => {
               </li>
             ) : (
               <>
-                {/* <li className="nav-item">
-                  <Link className="nav-link" to="/add-item">Add Item</Link>
-                </li> */}
                 <li className="nav-item">
                   <Link className="nav-link" to="/cart">Cart</Link>
                 </li>
@@ -47,8 +49,15 @@ const Navbar = () => {
               </>
             )}
           </ul>
-          <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <form className="d-flex" onSubmit={handleSearchSubmit}>
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Search (e.g. nike lifestyle 10)"
+              aria-label="Search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
             <button className="btn btn-primary" type="submit">Search</button>
           </form>
         </div>
@@ -58,4 +67,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
