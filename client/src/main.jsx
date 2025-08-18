@@ -49,6 +49,10 @@ const router = createBrowserRouter([
         element: <SearchPage />
       },
       {
+        path: 'search/:query',
+        element: <SearchPage />
+      },
+      {
         path: 'add-item',
         element: <AddItem/>
       },

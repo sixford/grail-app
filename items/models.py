@@ -3,12 +3,10 @@ from django.contrib.postgres.fields import ArrayField
 from django.conf import settings
 from django.contrib.auth import get_user_model
 
-# Create your models here.
-
 User = get_user_model()
 
-
 class Item(models.Model):
+    name = models.CharField(max_length=100, default='Unnamed')  # 🔹 New field for item name (used in search)
 
     brand = models.CharField(max_length=100)
     type = ArrayField(models.CharField(max_length=100, blank=True, null=True))
@@ -23,8 +21,7 @@ class Item(models.Model):
     image_3 = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
-      return f"{self.brand} {self.type} ({self.colour})"
-
+        return f"{self.name} ({self.brand}, {self.colour})"
 
 class Cart(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='cart')
@@ -38,11 +35,4 @@ class CartItem(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.item.brand} {self.item.type} in cart of {self.cart.user.username}"
-
-
-
-
-
-
-
+        return f"{self.item.name} in cart of {self.cart.user.username}"

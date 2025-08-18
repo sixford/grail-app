@@ -1,76 +1,98 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { ListGroup, Button } from "react-bootstrap"
-
 import { getToken } from "../../lib/auth"
 import LoadingSpinner from "../subcomponents/LoadingSpinner"
 
 export default function Search() {
-  const [searchData, setSearchData] = useState()
-  const [error, setError] = useState()
-
-  const location = useLocation()
+  const { query } = useParams()
   const navigate = useNavigate()
-  const options = { headers: { Authorization: getToken() } }
 
-  const rawQuery = new URLSearchParams(location.search).get('q') || ''
-
-  // You could also parse the query to split into individual filters
-  const [brand, type, colour, size] = rawQuery.split(' ')
+  const [searchData, setSearchData] = useState(null)
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function getData() {
+    async function fetchSearchResults() {
+      if (!query || query === "undefined") {
+        setLoading(false)
+        setError("Invalid search query")
+        return
+      }
+
       try {
-        let url = `/api/items/?`
+        const headers = getToken() ? { Authorization: getToken() } : {}
+        const { data } = await axios.get(`/api/items/?query=${query}`, { headers })
 
-        if (brand) url += `brand=${brand}&`
-        if (type) url += `type=${type}&`
-        if (colour) url += `colour=${colour}&`
-        if (size) url += `size=${size}&`
-
-        const { data } = await axios.get(url, options)
+        console.log("✅ Search results:", data)
         setSearchData(data)
-      } catch (error) {
-        console.log(error)
-        setError(error.message)
+      } catch (err) {
+        console.error("❌ Axios error:", err)
+        setError("Error fetching search results")
+      } finally {
+        setLoading(false)
       }
     }
 
-    if (rawQuery) getData()
-  }, [rawQuery])
+    fetchSearchResults()
+  }, [query])
 
-  function goBack() {
-    navigate(-1)
+  const handleClick = (e) => {
+    navigate(`/items/${e.target.id}`)
+  }
+
+  const goBack = () => {
+    navigate(-1) || navigate("/")
   }
 
   return (
-    <div className="px-3">
-      {searchData ? (
-        <p style={{ color: "black", textAlign: "center", marginTop: "30px" }}>
-          Showing results for "{rawQuery}" ({searchData.length})
-        </p>
-      ) : error ? (
-        <p className="text-danger">{error}</p>
-      ) : null}
+    <div className="container mt-5">
+      <h5 className="text-center">
+        {query ? (
+          <>
+            Showing results for <strong>"{query}"</strong>{" "}
+            {searchData ? `(${searchData.length})` : ""}
+          </>
+        ) : (
+          "No search term provided"
+        )}
+      </h5>
 
-      <ListGroup className="search-list my-5">
-        <hr />
-        {searchData ? (
-          searchData.map(item => (
+      <hr />
+
+      {loading && <LoadingSpinner />}
+
+      {error && (
+        <p className="text-danger text-center mt-3">
+          {error}
+        </p>
+      )}
+
+      {!loading && !error && searchData?.length === 0 && (
+        <p className="text-muted text-center">No items found.</p>
+      )}
+
+      {!loading && searchData && (
+        <ListGroup className="my-4">
+          {searchData.map((item) => (
             <ListGroup.Item
               key={item.id}
               style={{ cursor: "pointer" }}
-              onClick={() => navigate(`/items/${item.id}`)}
+              id={item.id}
+              onClick={handleClick}
             >
-              {item.name} – {item.brand} – {item.type} – Size {item.size}
+{item.name} — {item.brand} — {item.colour} — Sizes: {Array.isArray(item.size) ? item.size.join(", ") : item.size}
+
             </ListGroup.Item>
-          ))
-        ) : (
-          <LoadingSpinner />
-        )}
-        <Button className="search-btn my-4" onClick={goBack}>Back</Button>
-      </ListGroup>
+          ))}
+        </ListGroup>
+      )}
+
+      <div className="text-center mt-3">
+        <Button onClick={goBack}>Go Back</Button>
+      </div>
     </div>
   )
 }
+

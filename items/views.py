@@ -6,8 +6,8 @@ from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
+from django.db.models import Q
 
-# Index View
 class ItemIndexView(generics.ListCreateAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
@@ -19,22 +19,33 @@ class ItemIndexView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-
+        query = self.request.query_params.get('query', '').strip()
         brand = self.request.query_params.get('brand')
         type_param = self.request.query_params.get('type')
         colour = self.request.query_params.get('colour')
         size = self.request.query_params.get('size')
 
+        if query:
+            filters = (
+                Q(name__icontains=query) |
+                Q(brand__icontains=query) |
+                Q(type__overlap=[query]) |
+                Q(colour__icontains=query) |
+                Q(size__icontains=query)
+            )
+            queryset = queryset.filter(filters)
+
         if brand:
             queryset = queryset.filter(brand__icontains=brand)
         if type_param:
-            queryset = queryset.filter(type__icontains=type_param)
+            queryset = queryset.filter(type__overlap=[type_param])
         if colour:
             queryset = queryset.filter(colour__icontains=colour)
         if size:
-            queryset = queryset.filter(size=size)  # use __icontains if it's a string
+            queryset = queryset.filter(size__icontains=size)
 
         return queryset
+
 
 
 # Detail View
@@ -46,7 +57,6 @@ class ItemDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def perform_update(self, serializer):
         serializer.save(owner=self.request.user)
-        
 
 # Cart View
 class CartView(generics.RetrieveAPIView):
@@ -68,7 +78,7 @@ class AddToCartView(APIView):
         if CartItem.objects.filter(cart=cart, item=item).exists():
             return Response({"message": "Item is already in cart"}, status=status.HTTP_400_BAD_REQUEST)
         
-        cart_item = CartItem.objects.create(cart=cart, item=item)
+        CartItem.objects.create(cart=cart, item=item)
         return Response({"message": "Item added to cart"}, status=status.HTTP_201_CREATED)
 
 class RemoveFromCartView(APIView):
@@ -83,6 +93,3 @@ class RemoveFromCartView(APIView):
         print(f"CartItem: {cart_item}")  
         cart_item.delete()
         return Response(status=status.HTTP_200_OK)
-
-
-
