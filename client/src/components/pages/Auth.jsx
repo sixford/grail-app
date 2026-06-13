@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { setToken } from '../../lib/auth'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useOutletContext } from 'react-router-dom'
 
 export default function Auth() {
   const navigate = useNavigate()
+  const { setIsAuthenticated } = useOutletContext()
+
 
   const [formData, setFormData] = useState({
     username: '',
@@ -47,6 +49,7 @@ export default function Auth() {
         })
 
         setToken(data.access)
+        setIsAuthenticated(true)
         navigate('/homefeed')
       }
     } catch (error) {
