@@ -1,4 +1,3 @@
-// components/subcomponents/RequireAuth.jsx
 import { Navigate, Outlet, useOutletContext } from 'react-router-dom'
 
 export default function RequireAuth() {

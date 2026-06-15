@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './Root.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
+import RequireAuth from './components/subcomponents/RequireAuth.jsx'
+import './styles/tailwind.css'
 // Root component (assumed to be the main layout)
 
 // Style components
@@ -33,12 +34,12 @@ const router = createBrowserRouter([
         element: <Auth />
       },
       {
-        path: 'homefeed',
-        element: <HomeFeed />
-      },
-      {
-        path: 'cart',
-        element: <CartPage />
+        element: <RequireAuth />,
+        children: [
+          { path: 'homefeed', element: <HomeFeed /> },
+          { path: 'cart', element: <CartPage /> },
+          { path: 'add-item', element: <AddItem /> },
+        ]
       },
       {
         path: 'items/:itemId',
@@ -51,10 +52,6 @@ const router = createBrowserRouter([
       {
         path: 'search/:query',
         element: <SearchPage />
-      },
-      {
-        path: 'add-item',
-        element: <AddItem/>
       },
     ]
   }
