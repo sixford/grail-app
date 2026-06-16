@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { getToken } from "../../lib/auth"
-import { Col, Row, Card, Container, Button } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import LoadingSpinner from "../subcomponents/LoadingSpinner"
 import FormModal from "../subcomponents/FormModal"
@@ -10,7 +9,6 @@ export default function HomeFeed() {
   const args = { headers: { authorization: `Bearer ${getToken()}` } }
   const [itemData, setItemData] = useState([])
   const [error, setError] = useState()
-  const [titleShow, setTitleShow] = useState()
   const [nextItem, setNextItem] = useState()
   const [showModal, setShowModal] = useState(false)
   const [formData, setFormData] = useState({})
@@ -79,77 +77,73 @@ export default function HomeFeed() {
   }
 
   return (
-    <div className="homefeed flex-grow-1">
-      <Container className="home-feed-container">
+    <div className="bg-cream min-h-screen">
+      {/* Page header */}
+      <section className="px-6 md:px-16 pt-16 pb-10 text-center border-b border-ink/10">
+        <p className="font-sans text-sm tracking-widest2 uppercase text-electric underline mb-4">
+          The Marketplace
+        </p>
+        <h1 className="font-serif text-electric text-[12vw] md:text-[6vw] leading-[1.05] tracking-tight">
+          FIND YOUR <span className="italic">NEXT</span> PAIR
+        </h1>
+        <button
+          onClick={handleAddItem}
+          className="mt-8 inline-block bg-electric text-cream px-10 py-3 font-sans text-sm uppercase tracking-widest2 hover:bg-ink transition-colors duration-300"
+        >
+          Add Item
+        </button>
+      </section>
+
+      {/* Grid */}
+      <section className="px-6 md:px-16 py-12">
         {itemData.length ? (
-          <>
-            <div className="carousel-container">
-              <div className="carousel-content">
-                <div className="carousel-item"><h2>Jordan</h2></div>
-                <div className="carousel-item"><h2>Adidas</h2></div>
-                <div className="carousel-item"><h2>Nike</h2></div>
-                <div className="carousel-item"><h2>Converse</h2></div>
-              </div>
-            </div>
-            <h1 className="text-center text-dark my-4">Marketplace</h1>
-            <div className="d-flex justify-content-center my-4">
-            <Button variant="primary" onClick={handleAddItem}>
-              Add Item
-            </Button>
-            </div>
-            <Row className="g-4 pb-4 d-flex">
-              {itemData.map((item) => {
-                const { owner, image_1, brand, type, id } = item
-                return (
-                  <Col key={id} xs={12} sm={6} md={4} lg={4} xl={4}>
-                    <Card className="home-cards">
-                      <Card.Img
-                        src={image_1}
-                        alt={brand}
-                        className={
-                          titleShow && titleShow === id
-                            ? "home-feed-card-img-hover"
-                            : "home-feed-card-img"
-                        }
-                      />
-                      <Card.ImgOverlay
-                        className="overlay d-flex flex-column justify-content-center"
-                        id={id}
-                        onMouseEnter={() => setTitleShow(id)}
-                        onMouseLeave={() => setTitleShow(null)}
-                        onClick={() => setNextItem(id)}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {itemData.map((item, index) => {
+              const { owner, image_1, brand, name, id } = item
+              const accentColor = index % 2 === 0 ? 'border-electric' : 'border-amber'
+              const accentText = index % 2 === 0 ? 'text-electric' : 'text-amber'
+              return (
+                <div key={id} className={`bg-cream group border ${accentColor} transition-colors`}>
+                  <div
+                    className="relative aspect-square overflow-hidden cursor-pointer"
+                    onClick={() => setNextItem(id)}
+                  >
+                    <img
+                      src={image_1}
+                      alt={brand}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors duration-300 flex items-center justify-center">
+                      <span className="font-serif text-cream text-2xl md:text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {brand}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="px-4 py-4">
+                    <p className="font-serif text-lg">{name}</p>
+                    <p className={`font-sans text-xs uppercase tracking-widest2 mt-1 ${accentText}`}>
+                      {owner.username}
+                    </p>
+                    {isOwner(item) && (
+                      <button
+                        onClick={() => handleEditItem(item)}
+                        className={`mt-3 border ${accentColor} px-4 py-1.5 font-sans text-xs uppercase tracking-widest2 hover:bg-ink hover:text-cream hover:border-ink transition-colors`}
                       >
-                        <div>
-                          {titleShow && (
-                            <Card.Title className="post-title">
-                              {id === titleShow ? brand : ""}
-                            </Card.Title>
-                          )}
-                        </div>
-                      </Card.ImgOverlay>
-                      <Card.Body className="py-2">
-                        <Card.Title className="card-title">
-                          {owner.username}
-                        </Card.Title>
-                        <Card.Text>{type.join(", ")}</Card.Text>
-                        {isOwner(item) && (
-                          <Button variant="secondary" onClick={() => handleEditItem(item)}>
-                            Edit
-                          </Button>
-                        )}
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                )
-              })}
-            </Row>
-          </>
+                        Edit
+                      </button>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         ) : (
-          <div className="d-flex justify-content-center" style={{ color: "white" }}>
-            {error ? <p className="error">{error.message}</p> : <LoadingSpinner />}
+          <div className="flex justify-center py-20">
+            {error ? <p className="text-red-600">{error.message}</p> : <LoadingSpinner />}
           </div>
         )}
-      </Container>
+      </section>
+
       <FormModal
         show={showModal}
         handleClose={handleModalClose}
@@ -163,5 +157,3 @@ export default function HomeFeed() {
     </div>
   )
 }
-
-
